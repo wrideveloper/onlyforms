@@ -1,10 +1,17 @@
 <script>
+	import Seo from "$lib/components/seo.svelte";
 	import Card from "$lib/components/ui/card/card.svelte";
 	import Input from "$lib/components/ui/input/input.svelte";
 	import interviewees from "$lib/data/interviewees.json";
 
 	let keyword = "";
 </script>
+
+<Seo
+	title="WRI Open Recruitment"
+	desc="An app that should help WRI Open Recruitment process since using Google Sheet and Google Form was such a painful experience"
+	keywords={["wri", "open", "recruitment", "oprec", "wridev", "wri", "dev"]}
+/>
 
 <div class="max-w-screen-sm p-8 mx-auto">
 	<Card class="flex flex-col gap-4 p-4">
@@ -21,7 +28,3 @@
 		{/each}
 	</div>
 </div>
-
-<svelte:head>
-	<title>Workshop Riset Informatika</title>
-</svelte:head>
