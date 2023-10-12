@@ -12,7 +12,9 @@
 		<Input placeholder="Type your name here..." bind:value={keyword} />
 	</Card>
 	<div class="flex flex-col gap-2 py-4">
-		{#each interviewees.filter( (interviewee) => new RegExp(keyword, "gi").test(interviewee) ) as interviewee (interviewee)}
+		{#each interviewees
+			.sort()
+			.filter((interviewee) => new RegExp(keyword, "gi").test(interviewee)) as interviewee (interviewee)}
 			<Card class="p-4 capitalize">
 				{interviewee}
 			</Card>
