@@ -1,3 +1,3 @@
-# WRI Open Recruitment
+# Onlyforms
 
-An app that should help WRI Open Recruitment process since using Google Sheet and Google Form was such a painful experience
+A google form clone with more opinionated features tailored towards university events
