@@ -1,9 +1,8 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { FORM_COLLECTION_NAME, getFormSchemaById } from "$lib/server/repositories/form-repository";
 import { dbClient } from "$lib/server/repositories/db-client";
-import type { FormSchema } from "$lib/schema/form";
+import type { FormSchema, TextBlock } from "$lib/schema/form";
 import { ObjectId } from "mongodb";
-import type { TextBlock } from "$lib/schema/blocks";
 
 const DB_NAME = "onlyforms-form-test";
 

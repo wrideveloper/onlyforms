@@ -6,7 +6,7 @@ import {
 	linearScaleBlockSchema,
 	paragraphBlockSchema,
 	radioBlockSchema, selectBlockSchema, textBlockSchema, timeBlockSchema
-} from "$lib/schema/blocks";
+} from "$lib/schema/form/blocks";
 
 export const formSchema = z.object({
 	_id: z.instanceof(ObjectId),
