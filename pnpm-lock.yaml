@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@auth/core':
+    specifier: ^0.21.0
+    version: 0.21.0
   '@auth/sveltekit':
     specifier: ^0.7.0
     version: 0.7.0(@sveltejs/kit@1.25.2)(svelte@4.2.1)
+  '@felte/validator-zod':
+    specifier: ^1.0.17
+    version: 1.0.17(zod@3.22.4)
   '@types/node':
     specifier: ^20.11.5
     version: 20.11.5
@@ -20,12 +26,18 @@ dependencies:
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
+  felte:
+    specifier: ^1.2.12
+    version: 1.2.12(svelte@4.2.1)
   lucide-svelte:
     specifier: ^0.285.0
     version: 0.285.0(svelte@4.2.1)
   mongodb:
     specifier: ^6.3.0
     version: 6.3.0
+  svelte-french-toast:
+    specifier: ^1.2.0
+    version: 1.2.0(svelte@4.2.1)
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -506,6 +518,28 @@ packages:
   /@fastify/busboy@2.0.0:
     resolution: {integrity: sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==}
     engines: {node: '>=14'}
+
+  /@felte/common@1.1.8:
+    resolution: {integrity: sha512-VbEOfNLWfDx0SpCfeE+fNWDpvcntND4MFs7Lxd18RIjrZYH82D0wWe9th2oVF9QT5XzgBEdMF5NGIttcwU4sjg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
+  /@felte/core@1.4.1:
+    resolution: {integrity: sha512-dUzfzug5cK93kBjG0u9F3zDM781qCJP4QwYPOpJsXbydwVseDM5BXpDqvZUFhqJsd0x1GKftkX69+iWafyASjw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@felte/common': 1.1.8
+    dev: false
+
+  /@felte/validator-zod@1.0.17(zod@3.22.4):
+    resolution: {integrity: sha512-rOX1chLfTcixKMPEdrMSi8zsCM685Dsoy1a5qN1G6Fyh7HYK1vSmI6SfJ7m92DOt6kV+vAP4m5rk94Y8UFIeVw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      zod: ^3.2.0
+    dependencies:
+      '@felte/common': 1.1.8
+      zod: 3.22.4
+    dev: false
 
   /@floating-ui/core@1.5.0:
     resolution: {integrity: sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg==}
@@ -1313,6 +1347,16 @@ packages:
     resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
     dependencies:
       reusify: 1.0.4
+
+  /felte@1.2.12(svelte@4.2.1):
+    resolution: {integrity: sha512-llg9ywCgIso48NnO6jZUy8D9vWuKE90dfIFUZPLyNKqbH1WJ0brNU6C4DkdfXtpRKlzWWHvaQkgMIezKoWlzvA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.31.0 || ^4.0.0
+    dependencies:
+      '@felte/core': 1.4.1
+      svelte: 4.2.1
+    dev: false
 
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -2277,6 +2321,15 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-french-toast@1.2.0(svelte@4.2.1):
+    resolution: {integrity: sha512-5PW+6RFX3xQPbR44CngYAP1Sd9oCq9P2FOox4FZffzJuZI2mHOB7q5gJBVnOiLF5y3moVGZ7u2bYt7+yPAgcEQ==}
+    peerDependencies:
+      svelte: ^3.57.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.1
+      svelte-writable-derived: 3.1.0(svelte@4.2.1)
+    dev: false
+
   /svelte-hmr@0.15.3(svelte@4.2.1):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -2333,6 +2386,14 @@ packages:
       svelte: 4.2.1
       typescript: 5.2.2
     dev: true
+
+  /svelte-writable-derived@3.1.0(svelte@4.2.1):
+    resolution: {integrity: sha512-cTvaVFNIJ036vSDIyPxJYivKC7ZLtcFOPm1Iq6qWBDo1fOHzfk6ZSbwaKrxhjgy52Rbl5IHzRcWgos6Zqn9/rg==}
+    peerDependencies:
+      svelte: ^3.2.1 || ^4.0.0-next.1
+    dependencies:
+      svelte: 4.2.1
+    dev: false
 
   /svelte@4.2.1:
     resolution: {integrity: sha512-LpLqY2Jr7cRxkrTc796/AaaoMLF/1ax7cto8Ot76wrvKQhrPmZ0JgajiWPmg9mTSDqO16SSLiD17r9MsvAPTmw==}
