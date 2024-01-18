@@ -28,6 +28,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/sveltekit": "^0.7.0",
+		"@types/node": "^20.11.5",
+		"argon2": "^0.31.2",
 		"bits-ui": "^0.5.7",
 		"clsx": "^2.0.0",
 		"lucide-svelte": "^0.285.0",

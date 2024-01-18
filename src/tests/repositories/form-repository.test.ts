@@ -4,7 +4,7 @@ import { dbClient } from "$lib/server/repositories/db-client";
 import type { FormSchema, TextBlock } from "$lib/schema/form";
 import { ObjectId } from "mongodb";
 
-const DB_NAME = "onlyforms-form-test";
+const DB_NAME = "onlyforms-test";
 
 describe("form-repository", () => {
 	const objectId = ObjectId.createFromHexString("fb57f193091e6e59c462741d");
