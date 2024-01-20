@@ -1,4 +1,4 @@
-import { formSchema, type FormSchema } from "$lib/schema/form";
+import { formSchema, type FormSchema } from "$lib/schema/form/form";
 import { dbClient } from "$lib/server/repositories/db-client";
 import { MONGO_DB } from "$env/static/private";
 import { ObjectId } from "mongodb";

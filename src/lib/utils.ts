@@ -54,3 +54,16 @@ export const flyAndScale = (
 		easing: cubicOut,
 	};
 };
+
+export async function wrapResult<TResult>(promise: Promise<TResult>): Promise<[TResult | null, Error | null]> {
+	try {
+		const result = await promise;
+		return [result, null];
+	} catch (error) {
+		if (error instanceof Error) {
+			return [null, error];
+		}
+		const wrappedError = new Error(error as string);
+		return [null, wrappedError];
+	}
+}
