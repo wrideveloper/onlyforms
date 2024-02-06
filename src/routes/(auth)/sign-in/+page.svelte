@@ -3,7 +3,6 @@
 	import toast from "svelte-french-toast";
 	import { signIn } from "@auth/sveltekit/client";
 	import { Button } from "$lib/components/ui/button";
-	import * as Card from "$lib/components/ui/card";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import { createForm } from "felte";
@@ -12,7 +11,7 @@
 	import { goto } from "$app/navigation";
 
 	const { form, isSubmitting, errors } = createForm<AuthSchema>({
-		extend: validator({ schema: authSchema }),
+		extend: validator<AuthSchema>({ schema: authSchema }),
 		onSubmit: signInWithCredentials,
 		onError: handleErrors,
 		onSuccess: handleSuccess,
